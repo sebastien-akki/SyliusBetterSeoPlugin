@@ -137,4 +137,14 @@ class Seo implements TranslatableInterface, ResourceInterface, SeoInterface
     {
         return new SeoTranslation();
     }
+
+    public function getCanonical(): ?string
+    {
+        return $this->getTranslation()->getCanonical();
+    }
+
+    public function getRobots(): ?string
+    {
+        return $this->getTranslation()->getRobots();
+    }
 }
