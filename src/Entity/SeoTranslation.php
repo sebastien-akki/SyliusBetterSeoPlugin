@@ -163,7 +163,7 @@ class SeoTranslation extends AbstractTranslation implements ResourceInterface, S
         return $this->canonical;
     }
 
-    public function setCanonical(string $canonical): void
+    public function setCanonical(?string $canonical): void
     {
         $this->canonical = $canonical;
     }
