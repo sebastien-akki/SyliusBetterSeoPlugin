@@ -18,19 +18,19 @@ services:
         class: JoppeDc\SyliusBetterSeoPlugin\Form\Type\SeoType
         tags:
             - { name: form.type }
-        arguments: ['JoppeDc\SyliusBetterSeoPlugin\Entity\Seo']
+        arguments: ['JoppeDc\SyliusBetterSeoPlugin\Entity\Seo', ['sylius']]
 
     joppedc_sylius_better_seo_plugin.seo_translation.form.type:
         class: JoppeDc\SyliusBetterSeoPlugin\Form\Type\SeoTranslationType
         tags:
             - { name: form.type }
-        arguments: ['JoppeDc\SyliusBetterSeoPlugin\Entity\SeoTranslation']
+        arguments: ['JoppeDc\SyliusBetterSeoPlugin\Entity\SeoTranslation', ['sylius']]
 
     joppedc_sylius_better_seo_plugin.seo_image.type.form.type:
         class: JoppeDc\SyliusBetterSeoPlugin\Form\Type\SeoImageType
         tags:
             - { name: form.type }
-        arguments: ['JoppeDc\SyliusBetterSeoPlugin\Entity\SeoImage']
+        arguments: ['JoppeDc\SyliusBetterSeoPlugin\Entity\SeoImage', ['sylius']]
 
     joppedc_sylius_better_seo_plugin.block_event_listener.product.show.head:
         class: Sylius\Bundle\UiBundle\Block\BlockEventListener

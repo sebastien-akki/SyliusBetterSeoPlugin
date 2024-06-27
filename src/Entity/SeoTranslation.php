@@ -178,7 +178,7 @@ class SeoTranslation extends AbstractTranslation implements ResourceInterface, S
         return $this->robots;
     }
 
-    public function setRobots(string $robots): void
+    public function setRobots(?string $robots): void
     {
         $this->robots = $robots;
     }
