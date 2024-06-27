@@ -64,6 +64,11 @@ class SeoTranslation extends AbstractTranslation implements ResourceInterface, S
      */
     private $canonical;
 
+    /**
+     * @var string|null
+     */
+    private $metaDescription;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -176,5 +181,16 @@ class SeoTranslation extends AbstractTranslation implements ResourceInterface, S
     public function setRobots(string $robots): void
     {
         $this->robots = $robots;
+    }
+
+    public function getMetaDescription(): ?string
+    {
+        return $this->metaDescription;
+    }
+
+    public function setMetaDescription(?string $metaDescription): SeoTranslation
+    {
+        $this->metaDescription = $metaDescription;
+        return $this;
     }
 }

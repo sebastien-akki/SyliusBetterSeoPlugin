@@ -67,3 +67,10 @@ JoppeDc\SyliusBetterSeoPlugin\Entity\SeoTranslation:
             nullable: true
             options:
                 default: ''
+        metaDescription:
+            column: meta_description
+            type: string
+            length: 2048
+            nullable: true
+            options:
+                default: ''

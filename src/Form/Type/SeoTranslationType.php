@@ -62,13 +62,20 @@ class SeoTranslationType extends AbstractResourceType
 
         $builder->add('robots', TextType::class, [
             'required' => false,
-            'label' => 'sylius.form.seo.robots'
+            'label' => 'app.ui.robots'
         ]);
 
         $builder->add('canonical', TextType::class, [
             'required' => false,
-            'label' => 'sylius.form.seo.canonical'
+            'label' => 'app.ui.canonical'
         ]);
+
+        $builder->add('metaDescription', TextType::class, [
+            'label' => 'app.ui.meta_description_label',
+            'help' => 'app.ui.meta_description_help',
+            'required' => false,
+        ]);
+
     }
 
     public function getBlockPrefix(): string
