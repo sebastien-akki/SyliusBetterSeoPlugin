@@ -147,4 +147,9 @@ class Seo implements TranslatableInterface, ResourceInterface, SeoInterface
     {
         return $this->getTranslation()->getRobots();
     }
+    
+    public function getMetaDescription(): ?string
+    {
+        return $this->getTranslation()->getMetaDescription();
+    }
 }
