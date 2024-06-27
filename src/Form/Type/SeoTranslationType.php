@@ -8,6 +8,7 @@ use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class SeoTranslationType extends AbstractResourceType
 {
@@ -50,9 +51,12 @@ class SeoTranslationType extends AbstractResourceType
         ]);
 
         $builder->add('extraTags', TextareaType::class, [
-            'empty_data' => '',
             'label' => 'app.ui.extra_tags',
             'required' => false,
+            'constraints' => new Assert\Length([
+                'max' => 255,
+                'maxMessage' => 'Les extra-tags ne doivent pas dépasser {{ limit }} caractères.',
+            ], groups: ['sylius']),
         ]);
 
         $builder->add('image', SeoImageType::class, [
@@ -74,6 +78,10 @@ class SeoTranslationType extends AbstractResourceType
             'label' => 'app.ui.meta_description_label',
             'help' => 'app.ui.meta_description_help',
             'required' => false,
+            'constraints' => new Assert\Length([
+                'max' => 2048,
+                'maxMessage' => 'La méta description ne doit pas dépasser {{ limit }} caractères.',
+            ], groups: ['sylius']),
         ]);
 
     }
